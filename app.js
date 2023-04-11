@@ -26,7 +26,7 @@ let seattleObj = {
     for(let i = 0; i < hours.length; i++){
       let randomCust = this.generateRandNumOfCust();
       console.log(randomCust);
-      let randomCookiesEachHour = Math.floor(randomCust * this.avg);
+      let randomCookiesEachHour = Math.ceil(randomCust * this.avg);
       console.log (randomCookiesEachHour);
       this.cookiesSoldEveryHour.push(randomCookiesEachHour);
       console.log(this.cookiesSoldEveryHour);
