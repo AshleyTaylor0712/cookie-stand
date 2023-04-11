@@ -23,15 +23,24 @@ let seattleObj = {
 
   //Calc & store the simulated amounts of cookies purchased each hour at the location using average cookies purchased and the rand. # of cust generated.
   calcCookiesHour: function() {
-    let generateRandNumOfCust = this.generateRandNumOfCust();
-    console.log(generateRandNumOfCust);
+    for(let i = 0; i < hours.length; i++){
+      let randomCust = this.generateRandNumOfCust();
+      console.log(randomCust);
+      let randomCookiesEachHour = Math.floor(randomCust * this.avg);
+      console.log (randomCookiesEachHour);
+      this.cookiesSoldEveryHour.push(randomCookiesEachHour);
+      console.log(this.cookiesSoldEveryHour);
+    }
+    
+    
   },
    
       //loop to assign cookie numbers to hours
       timeList: function() {
+        this.calcCookiesHour();
        for(let i = 0; i < hours.length; i++){
          let li = document.createElement('li');
-         li.textContent = hours[i]
+         li.textContent = `${hours[i]}: ${this.cookiesSoldEveryHour[i]}`
          //li.textContent = this.generateRandNumOfCust();
          cookieBox.appendChild(li);
          
