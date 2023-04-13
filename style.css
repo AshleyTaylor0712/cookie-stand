@@ -1,0 +1,17 @@
+table, td, th {
+  border: 1px solid black;
+}
+table {
+  margin: auto;
+  text-align: center;
+  margin-top: 30px;
+}
+td, th {
+  padding: 1rem;
+}
+th {
+  font-weight: bold;
+}
+tfoot {
+  background-color: yellow;
+}
