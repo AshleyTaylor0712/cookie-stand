@@ -5,6 +5,9 @@
 header {
   background-color: rgb(83, 79, 79);
 }
+ .navigation {
+  color: rgb(203, 97, 89);
+ }
 
 body {
   background-color: brown;
