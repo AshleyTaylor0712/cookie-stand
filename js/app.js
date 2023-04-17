@@ -105,3 +105,24 @@ Dubai.tableRender();
 Paris.tableRender();
 Lima.tableRender();
 storeSales();
+
+$('form').on('submit', function(event) {
+  event.preventDefault(); // prevent the form from submitting and reloading the page
+
+  // get the values from the form inputs
+  let name = $('#store-name').val();
+  let min = parseInt($('#min-customers').val());
+  let max = parseInt($('#max-customers').val());
+  let avg = parseFloat($('#avg-cookies').val());
+
+  // create a new StoreFront object with the input values
+  let newStore = new StoreFront(name, min, max, avg);
+
+  // add the new store to the storeArray and render its table row
+  storeArray.push(newStore);
+  newStore.tableRender();
+
+  // update the total sales row
+  tableElement.deleteRow(-1); // delete the old total sales row
+  storeSales(); // render the new total sales row
+});
